@@ -1,6 +1,6 @@
 # PyIceberg example with Glue Data Catalog
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-042-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-016-green">
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-046-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-016-green">
 
 Example using PyIceberg
 
