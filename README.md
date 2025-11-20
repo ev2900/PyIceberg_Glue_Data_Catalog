@@ -6,3 +6,5 @@ Example using PyIceberg
 
 ## Planned Improvements for this Repository
 1. Add an example using the [upsert](https://py.iceberg.apache.org/api/#upsert) API. Original GitHub issue asking for this feature [HERE](https://github.com/apache/iceberg-python/issues/402)
+
+
