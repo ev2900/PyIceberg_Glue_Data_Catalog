@@ -343,21 +343,22 @@ Resources:
     Properties:
       StudioLifecycleConfigName: pyiceberg-repo-clone
       StudioLifecycleConfigAppType: JupyterLab
-      StudioLifecycleConfigContent: |
-        #!/bin/bash
-        set -eux
+      StudioLifecycleConfigContent:
+        Fn::Base64: |
+          #!/bin/bash
+          set -eux
   
-        REPO_URL="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog.git"
-        TARGET_DIR="/home/sagemaker-user/PyIceberg_Glue_Data_Catalog"
+          REPO_URL="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog.git"
+          TARGET_DIR="/home/sagemaker-user/PyIceberg_Glue_Data_Catalog"
   
-        # Ensure git is available (it is on the standard Studio images)
-        command -v git
+          # Ensure git is available (it is on the standard Studio images)
+          command -v git
   
-        if [ ! -d "${TARGET_DIR}/.git" ]; then
-          # Fresh clone
-          git clone "${REPO_URL}" "${TARGET_DIR}"
-        else
-          # If already cloned, just pull latest
-          cd "${TARGET_DIR}"
-          git pull
-        fi
+          if [ ! -d "${TARGET_DIR}/.git" ]; then
+            # Fresh clone
+            git clone "${REPO_URL}" "${TARGET_DIR}"
+          else
+            # If already cloned, just pull latest
+            cd "${TARGET_DIR}"
+            git pull
+          fi
