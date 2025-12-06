@@ -19,11 +19,13 @@ You can test this pyIceberg with a Glue Data Catalog registered Iceberg table. B
 
 [![Launch CloudFormation Stack](https://sharkech-public.s3.amazonaws.com/misc-public/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=pyiceberg-gdc&templateURL=https://sharkech-public.s3.amazonaws.com/misc-public/pyIceberg_gdc.yaml)
 
-Create a sample Iceberg table in AWS via. Glue
+### Create a sample Iceberg table in AWS via. Glue
+
+Navigate to the Glue console ETL jobs page, select the *Create Iceberg Table* and select the *Run* button
 
 <img width="700" alt="quick_setup" src="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/README/run_glue_job.png">
 
 This will create an Iceberg table named ```sampledataicebergtable``` registered with the Glue data catalog database ```iceberg```
 
-## Open SageMakerAI Studio
+### Open SageMakerAI Studio
 
