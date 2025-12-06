@@ -1,6 +1,6 @@
 # PyIceberg example with Glue Data Catalog
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-055-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-025-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-000-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-055-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-025-green">
 
 [PyIceberg](https://py.iceberg.apache.org/) is a Python library that can read, write etc. to Apache Iceberg tables. 
 
