@@ -315,6 +315,9 @@ Resources:
       UserProfileName: default
       UserSettings: 
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+        JupyterLabAppSettings:
+          LifecycleConfigArns:
+            - !GetAtt PyIcebergRepoLifecycleConfig.StudioLifecycleConfigArn
   #
   # SageMaker Space
   #
