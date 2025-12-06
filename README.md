@@ -33,3 +33,12 @@ Navigate to the SageMaker AI page, select *Open Studio* the domain and user prof
 
 <img width="700" alt="quick_setup" src="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/README/sagemaker_studio.png">
 
+## Launch Juypter 
+
+Select the *JuypterLab* icon and then the *Run* button. Once the space is running select *Open*
+
+<img width="700" alt="quick_setup" src="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/README/juypter.png">
+
+## Run the pyIceberg Juypter Notebook
+
+
