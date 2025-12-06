@@ -29,3 +29,7 @@ This will create an Iceberg table named ```sampledataicebergtable``` registered 
 
 ### Open SageMakerAI Studio
 
+Navigate to the SageMaker AI page, select *Open Studio* the domain and user profile should be prepopulated with *pyiceberg-domain* and *default*
+
+<img width="700" alt="quick_setup" src="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/README/sagemaker_studio.png">
+
