@@ -274,9 +274,16 @@ Resources:
             InstanceType: system
         KernelGatewayAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.medium
-
-Outputs:
-  SageMakerDomainUrl:
-    Description: URL to open the SageMaker studio
-    Value: !Sub "https://studio.${AWS::Region}.sagemaker.aws/jupyter/default/${SageMakerDomain}"
+            InstanceType: ml.t3.large
+  #
+  # SageMaker User Profile
+  #
+  SageMakerUserProfile:
+    Type: AWS::SageMaker::UserProfile
+    Properties:
+      DomainId: !Ref SageMakerDomain
+      UserProfileName: default   # or whatever name you want
+      UserSettings:
+        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+        StudioWebPortal: ENABLED
+        DefaultLandingUri: "studio::"
