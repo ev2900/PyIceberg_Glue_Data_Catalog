@@ -299,38 +299,9 @@ Resources:
             InstanceType: system
         KernelGatewayAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.medium
+            InstanceType: ml.t3.large
       DefaultSpaceSettings:
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
         JupyterLabAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.medium
-            
-  #
-  # SageMaker Juypter Lab Space
-  #
-  SageMakerJupyterLabSpace:
-    Type: AWS::SageMaker::Space
-    Properties:
-      DomainId: !Ref SageMakerDomain
-      SpaceName: pyiceberg-juypter        
-      SpaceDisplayName: pyIceberg Juypter Space
-      SpaceSettings:
-        AppType: JupyterLab
-        SpaceManagedResources: ENABLED
-        JupyterLabAppSettings:
-          DefaultResourceSpec:
-            InstanceType: ml.t3.medium
-  #
-  # SageMaker User Profile
-  #      
-  SageMakerUserProfileDefault:
-    Type: AWS::SageMaker::UserProfile
-    Properties:
-      DomainId: !Ref SageMakerDomain
-      UserProfileName: default
-      UserSettings:
-        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
-        JupyterLabAppSettings:
-          DefaultResourceSpec:
-            InstanceType: ml.t3.medium
+            InstanceType: ml.t3.large
