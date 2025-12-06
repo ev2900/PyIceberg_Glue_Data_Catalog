@@ -275,15 +275,19 @@ Resources:
         KernelGatewayAppSettings:
           DefaultResourceSpec:
             InstanceType: ml.t3.large
+            
   #
-  # SageMaker User Profile
+  # SageMaker Juypter Lab Space
   #
-  SageMakerUserProfile:
-    Type: AWS::SageMaker::UserProfile
+  SageMakerJupyterLabSpace:
+    Type: AWS::SageMaker::Space
     Properties:
       DomainId: !Ref SageMakerDomain
-      UserProfileName: default   # or whatever name you want
-      UserSettings:
-        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
-        StudioWebPortal: ENABLED
-        DefaultLandingUri: "studio::"
+      SpaceName: pyiceberg-juypter        
+      SpaceDisplayName: pyIceberg Juypter Space
+      SpaceSettings:
+        AppType: JupyterLab
+        SpaceManagedResources: ENABLED
+        JupyterLabAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.large
