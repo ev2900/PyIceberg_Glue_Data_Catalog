@@ -274,12 +274,12 @@ Resources:
             InstanceType: system
         KernelGatewayAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.large
+            InstanceType: ml.t3.medium
       DefaultSpaceSettings:
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
         JupyterLabAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.large
+            InstanceType: ml.t3.medium
             
   #
   # SageMaker Juypter Lab Space
@@ -295,7 +295,7 @@ Resources:
         SpaceManagedResources: ENABLED
         JupyterLabAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.large
+            InstanceType: ml.t3.medium
   #
   # SageMaker User Profile
   #      
@@ -308,4 +308,4 @@ Resources:
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
         JupyterLabAppSettings:
           DefaultResourceSpec:
-            InstanceType: ml.t3.large
+            InstanceType: ml.t3.medium
