@@ -1,8 +1,8 @@
 # PyIceberg example with Glue Data Catalog
 
-<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-000-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-055-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-025-green">
+<img width="275" alt="map-user" src="https://img.shields.io/badge/cloudformation template deployments-87-blue"> <img width="85" alt="map-user" src="https://img.shields.io/badge/views-055-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-025-green">
 
-[PyIceberg](https://py.iceberg.apache.org/) is a Python library that can read, write etc. to Apache Iceberg tables. 
+[PyIceberg](https://py.iceberg.apache.org/) is a Python library that can read, write etc. to Apache Iceberg tables.
 
 This code sample demonstrated how PyIceberg run via. a SageMakerAI studio Juypter notebook can interact with an existing Iceberg table registered with the Glue Data Catalog.
 
@@ -29,7 +29,7 @@ Navigate to the SageMaker AI page, select *Open Studio* the domain and user prof
 
 <img width="700" alt="quick_setup" src="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/README/sagemaker_studio.png">
 
-## Launch Juypter 
+## Launch Juypter
 
 Select the *JuypterLab* icon and then the *Run* button. Once the space is running select *Open*
 
@@ -37,6 +37,6 @@ Select the *JuypterLab* icon and then the *Run* button. Once the space is runnin
 
 ## Run the pyIceberg Juypter Notebook
 
-This GitHub repo is already cloned to the SageMaker enviorment. Using the file explorer select the [pyiceberg-gdc.ipynb](https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/pyiceberg-gdc.ipynb) notebook. 
+This GitHub repo is already cloned to the SageMaker enviorment. Using the file explorer select the [pyiceberg-gdc.ipynb](https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/pyiceberg-gdc.ipynb) notebook.
 
 Run the code in the notebook. Each section of code is explained by the markdown in the notebook.
