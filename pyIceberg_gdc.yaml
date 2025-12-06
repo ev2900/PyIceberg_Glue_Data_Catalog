@@ -306,10 +306,10 @@ Resources:
           DefaultResourceSpec:
             InstanceType: ml.t3.large
             
-SageMakerUserProfile:
-  Type: AWS::SageMaker::UserProfile
-  Properties:
-    DomainId: !GetAtt SageMakerDomain.DomainId
-    UserProfileName: default
-    UserSettings: 
-      ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+  SageMakerUserProfile:
+    Type: AWS::SageMaker::UserProfile
+    Properties:
+      DomainId: !GetAtt SageMakerDomain.DomainId
+      UserProfileName: default
+      UserSettings: 
+        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
