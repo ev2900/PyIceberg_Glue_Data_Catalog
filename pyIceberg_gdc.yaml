@@ -326,3 +326,18 @@ Resources:
             InstanceType: ml.t3.large
       OwnershipSettings:
         OwnerUserProfileName: default
+
+  SageMakerSpace:
+    Type: AWS::SageMaker::Space
+    Properties:
+      DomainId: !GetAtt SageMakerDomain.DomainId
+      SpaceName: pyiceberg-space
+      OwnershipSettings:
+        OwnerUserProfileName: default
+      SpaceSharingSettings:
+        SharingType: Private  # or Shared
+      SpaceSettings:
+        AppType: JupyterLab
+        JupyterLabAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.large
