@@ -313,3 +313,17 @@ Resources:
       UserProfileName: default
       UserSettings: 
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+
+SageMakerSpace:
+  Type: AWS::SageMaker::Space
+  Properties:
+    DomainId: !GetAtt SageMakerDomain.DomainId
+    SpaceName: pyiceberg-space
+    SpaceSettings:
+      AppType: JupyterLab
+      AppSettings:
+        JupyterLabAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.large
+    OwnershipSettings:
+      OwnerUserProfileName: default
