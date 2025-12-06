@@ -13,21 +13,21 @@ Parameters:
     Type: AWS::EC2::Subnet::Id
     Description: Subnet for the SageMaker Domain
 
-SubnetId3:
-    Type: AWS::EC2::Subnet::Id
-    Description: Subnet for the SageMaker Domain
-
-SubnetId4:
-    Type: AWS::EC2::Subnet::Id
-    Description: Subnet for the SageMaker Domain
-
-SubnetId5:
-    Type: AWS::EC2::Subnet::Id
-    Description: Subnet for the SageMaker Domain
-
-SubnetId6:
-    Type: AWS::EC2::Subnet::Id
-    Description: Subnet for the SageMaker Domain
+  SubnetId3:
+      Type: AWS::EC2::Subnet::Id
+      Description: Subnet for the SageMaker Domain
+  
+  SubnetId4:
+      Type: AWS::EC2::Subnet::Id
+      Description: Subnet for the SageMaker Domain
+  
+  SubnetId5:
+      Type: AWS::EC2::Subnet::Id
+      Description: Subnet for the SageMaker Domain
+  
+  SubnetId6:
+      Type: AWS::EC2::Subnet::Id
+      Description: Subnet for the SageMaker Domain
 
 Resources:
   #
