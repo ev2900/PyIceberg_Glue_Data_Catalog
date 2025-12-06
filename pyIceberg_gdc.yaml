@@ -5,7 +5,27 @@ Parameters:
     Type: AWS::EC2::VPC::Id
     Description: VPC for the SageMaker Domain
 
-  SubnetId:
+  SubnetId1:
+    Type: AWS::EC2::Subnet::Id
+    Description: Subnet for the SageMaker Domain
+
+  SubnetId2:
+    Type: AWS::EC2::Subnet::Id
+    Description: Subnet for the SageMaker Domain
+
+SubnetId3:
+    Type: AWS::EC2::Subnet::Id
+    Description: Subnet for the SageMaker Domain
+
+SubnetId4:
+    Type: AWS::EC2::Subnet::Id
+    Description: Subnet for the SageMaker Domain
+
+SubnetId5:
+    Type: AWS::EC2::Subnet::Id
+    Description: Subnet for the SageMaker Domain
+
+SubnetId6:
     Type: AWS::EC2::Subnet::Id
     Description: Subnet for the SageMaker Domain
 
@@ -266,7 +286,12 @@ Resources:
       AuthMode: IAM
       VpcId: !Ref VpcId
       SubnetIds:
-        - !Ref SubnetId
+        - !Ref SubnetId1
+        - !Ref SubnetId2
+        - !Ref SubnetId3
+        - !Ref SubnetId4
+        - !Ref SubnetId5
+        - !Ref SubnetId6
       DefaultUserSettings:
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
         JupyterServerAppSettings:
