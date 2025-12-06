@@ -40,3 +40,4 @@ Select the *JuypterLab* icon and then the *Run* button. Once the space is runnin
 This GitHub repo is already cloned to the SageMaker enviorment. Using the file explorer select the [pyiceberg-gdc.ipynb](https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/pyiceberg-gdc.ipynb) notebook.
 
 Run the code in the notebook. Each section of code is explained by the markdown in the notebook.
+
