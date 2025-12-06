@@ -2,3 +2,4 @@ pyiceberg
 pyiceberg[glue]
 pandas
 pyarrow
+datetime
