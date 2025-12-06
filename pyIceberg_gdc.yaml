@@ -1,4 +1,14 @@
 Description: CloudFormation Deployment for resources required to test PyIceberg connecting to an Iceberg table registered with the Glue Data Catalog
+
+Parameters:
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: VPC for the SageMaker Domain
+
+  SubnetId:
+    Type: AWS::EC2::Subnet::Id
+    Description: Subnet for the SageMaker Domain
+
 Resources:
   #
   # S3 Bucket
@@ -223,3 +233,45 @@ Resources:
       NumberOfWorkers: 2
       WorkerType: 'G.1X'
       Timeout: 2880
+
+  #
+  # IAM Role for SageMaker
+  #
+  SageMakerExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: sagemaker.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: AdminAccess
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: "*"
+                Resource: "*"
+                
+  #
+  # SageMaker Domain
+  #
+  SageMakerDomain:
+    Type: AWS::SageMaker::Domain
+    Properties:
+      DomainName: pyiceberg-domain
+      AuthMode: IAM
+      VpcId: !Ref VpcId
+      SubnetIds:
+        - !Ref SubnetId
+      DefaultUserSettings:
+        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+        JupyterServerAppSettings:
+          DefaultResourceSpec:
+            InstanceType: system
+        KernelGatewayAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.medium
