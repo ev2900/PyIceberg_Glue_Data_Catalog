@@ -296,3 +296,16 @@ Resources:
         JupyterLabAppSettings:
           DefaultResourceSpec:
             InstanceType: ml.t3.large
+  #
+  # SageMaker User Profile
+  #      
+  SageMakerUserProfileDefault:
+    Type: AWS::SageMaker::UserProfile
+    Properties:
+      DomainId: !Ref SageMakerDomain
+      UserProfileName: default
+      UserSettings:
+        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+        JupyterLabAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.large
