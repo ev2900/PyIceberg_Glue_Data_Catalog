@@ -21,7 +21,7 @@ You can test this pyIceberg with a Glue Data Catalog registered Iceberg table. B
 
 Create a sample Iceberg table in AWS via. Glue
 
-<img width="700" alt="quick_setup" src="
+<img width="700" alt="quick_setup" src="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog/blob/main/README/run_glue_job.png">
 
 This will create an Iceberg table named ```sampledataicebergtable``` registered with the Glue data catalog database ```iceberg```
 
