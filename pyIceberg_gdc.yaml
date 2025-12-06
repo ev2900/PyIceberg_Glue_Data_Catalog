@@ -275,6 +275,11 @@ Resources:
         KernelGatewayAppSettings:
           DefaultResourceSpec:
             InstanceType: ml.t3.large
+      DefaultSpaceSettings:
+        ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+        JupyterLabAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.large
             
   #
   # SageMaker Juypter Lab Space
