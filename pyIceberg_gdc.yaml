@@ -305,7 +305,9 @@ Resources:
         JupyterLabAppSettings:
           DefaultResourceSpec:
             InstanceType: ml.t3.large
-            
+  #
+  # SageMaker User Profile
+  #
   SageMakerUserProfile:
     Type: AWS::SageMaker::UserProfile
     Properties:
@@ -313,19 +315,49 @@ Resources:
       UserProfileName: default
       UserSettings: 
         ExecutionRole: !GetAtt SageMakerExecutionRole.Arn
+  #
+  # SageMaker Space
+  #
+SageMakerSpace:
+  Type: AWS::SageMaker::Space
+  DependsOn: SageMakerUserProfile
+  Properties:
+    DomainId: !GetAtt SageMakerDomain.DomainId
+    SpaceName: pyiceberg-space
+    OwnershipSettings:
+      OwnerUserProfileName: default
+    SpaceSharingSettings:
+      SharingType: Private
+    SpaceSettings:
+      AppType: JupyterLab
+      JupyterLabAppSettings:
+        DefaultResourceSpec:
+          InstanceType: ml.t3.large
+          LifecycleConfigArn: !GetAtt PyIcebergRepoLifecycleConfig.StudioLifecycleConfigArn
 
-  SageMakerSpace:
-    Type: AWS::SageMaker::Space
-    DependsOn: SageMakerUserProfile
+  #
+  # SageMaker Life Cycle Confir
+  #
+  PyIcebergRepoLifecycleConfig:
+    Type: AWS::SageMaker::StudioLifecycleConfig
     Properties:
-      DomainId: !GetAtt SageMakerDomain.DomainId
-      SpaceName: pyiceberg-space
-      OwnershipSettings:
-        OwnerUserProfileName: default
-      SpaceSharingSettings:
-        SharingType: Private  # or Shared
-      SpaceSettings:
-        AppType: JupyterLab
-        JupyterLabAppSettings:
-          DefaultResourceSpec:
-            InstanceType: ml.t3.large
+      StudioLifecycleConfigName: pyiceberg-repo-clone
+      StudioLifecycleConfigAppType: JupyterLab
+      StudioLifecycleConfigContent: |
+        #!/bin/bash
+        set -eux
+  
+        REPO_URL="https://github.com/ev2900/PyIceberg_Glue_Data_Catalog.git"
+        TARGET_DIR="/home/sagemaker-user/PyIceberg_Glue_Data_Catalog"
+  
+        # Ensure git is available (it is on the standard Studio images)
+        command -v git
+  
+        if [ ! -d "${TARGET_DIR}/.git" ]; then
+          # Fresh clone
+          git clone "${REPO_URL}" "${TARGET_DIR}"
+        else
+          # If already cloned, just pull latest
+          cd "${TARGET_DIR}"
+          git pull
+        fi
