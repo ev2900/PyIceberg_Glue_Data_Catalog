@@ -275,3 +275,7 @@ Resources:
         KernelGatewayAppSettings:
           DefaultResourceSpec:
             InstanceType: ml.t3.medium
+
+ SageMakerDomainUrl:
+    Description: URL to open the SageMaker Domain in the AWS Console
+    Value: !Sub "https://${AWS::Region}.console.aws.amazon.com/sagemaker/home?region=${AWS::Region}#/studio/${SageMakerDomain}"
