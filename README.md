@@ -6,10 +6,6 @@
 
 This code sample demonstrated how PyIceberg run via. a SageMakerAI studio Juypter notebook can interact with an existing Iceberg table registered with the Glue Data Catalog.
 
-The architecture below depicts this
-
-<img width="700" alt="quick_setup" src="
-
 ## Example
 
 You can test this pyIceberg with a Glue Data Catalog registered Iceberg table. Begin by deploying the CloudFormation stack below. This will create the required AWS resources.
