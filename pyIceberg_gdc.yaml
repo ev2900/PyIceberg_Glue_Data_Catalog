@@ -318,22 +318,22 @@ Resources:
   #
   # SageMaker Space
   #
-SageMakerSpace:
-  Type: AWS::SageMaker::Space
-  DependsOn: SageMakerUserProfile
-  Properties:
-    DomainId: !GetAtt SageMakerDomain.DomainId
-    SpaceName: pyiceberg-space
-    OwnershipSettings:
-      OwnerUserProfileName: default
-    SpaceSharingSettings:
-      SharingType: Private
-    SpaceSettings:
-      AppType: JupyterLab
-      JupyterLabAppSettings:
-        DefaultResourceSpec:
-          InstanceType: ml.t3.large
-          LifecycleConfigArn: !GetAtt PyIcebergRepoLifecycleConfig.StudioLifecycleConfigArn
+  SageMakerSpace:
+    Type: AWS::SageMaker::Space
+    DependsOn: SageMakerUserProfile
+    Properties:
+      DomainId: !GetAtt SageMakerDomain.DomainId
+      SpaceName: pyiceberg-space
+      OwnershipSettings:
+        OwnerUserProfileName: default
+      SpaceSharingSettings:
+        SharingType: Private
+      SpaceSettings:
+        AppType: JupyterLab
+        JupyterLabAppSettings:
+          DefaultResourceSpec:
+            InstanceType: ml.t3.large
+            LifecycleConfigArn: !GetAtt PyIcebergRepoLifecycleConfig.StudioLifecycleConfigArn
 
   #
   # SageMaker Life Cycle Confir
