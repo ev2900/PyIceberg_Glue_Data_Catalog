@@ -279,4 +279,4 @@ Resources:
 Outputs:
   SageMakerDomainUrl:
     Description: URL to open the SageMaker studio
-    Value: !Sub "https://studio.${AWS::Region}.sagemaker.aws/jupyter/default/${DomainId}"
+    Value: !Sub "https://studio.${AWS::Region}.sagemaker.aws/jupyter/default/${SageMakerDomain}"
