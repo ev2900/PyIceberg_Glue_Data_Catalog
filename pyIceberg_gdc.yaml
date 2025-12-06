@@ -279,4 +279,4 @@ Resources:
 Outputs:
   SageMakerDomainUrl:
     Description: URL to open the SageMaker Domain in the AWS Console
-    Value: !Sub "https://${AWS::Region}.console.aws.amazon.com/sagemaker/home?region=${AWS::Region}#/studio/${SageMakerDomain}"
+    Value: !Sub "https://studio.${AWS::Region}.sagemaker.aws/jupyter/default/${DomainId}"
